@@ -72,7 +72,7 @@ export function HeroOpening() {
       />
 
       {/* Conteúdo do hero — ancorado à esquerda, com margem lateral generosa */}
-      <div className="relative w-full px-8 pb-20 pt-[120px] sm:px-12">
+      <div className="relative w-full px-8 pb-32 pt-[120px] sm:px-12">
         <div className="max-w-md">
           {/* Título — wipe da esquerda para a direita */}
           <h1
@@ -109,7 +109,7 @@ export function HeroOpening() {
           >
             <Link
               href="/data-astral"
-              className="group relative z-20 inline-flex h-14 w-full max-w-[224px] items-center justify-between gap-2 rounded-[20px] bg-brand pl-3 pr-4 text-[0.8125rem] font-semibold text-brand-foreground shadow-[0_0_44px_-12px_var(--brand)] transition-shadow hover:shadow-[0_0_60px_-8px_var(--brand)]"
+              className="group relative z-20 inline-flex h-12 w-full max-w-[300px] items-center justify-between gap-2 rounded-[16px] bg-brand pl-3 pr-4 text-[0.8125rem] font-semibold text-brand-foreground shadow-[0_0_44px_-12px_var(--brand)] transition-shadow hover:shadow-[0_0_60px_-8px_var(--brand)]"
             >
               <LogoMark className="size-6 shrink-0 text-brand-foreground" />
               <span className="flex-1 whitespace-nowrap text-center">Descubra sua Data!</span>
