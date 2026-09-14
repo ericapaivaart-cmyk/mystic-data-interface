@@ -72,7 +72,7 @@ export function HeroOpening() {
       />
 
       {/* Conteúdo do hero — ancorado à esquerda, com margem lateral generosa */}
-      <div className="relative w-full px-8 pb-32 pt-[120px] sm:px-12">
+      <div className="relative w-full px-8 pb-32 pt-[168px] sm:px-12">
         <div className="max-w-md">
           {/* Título — wipe da esquerda para a direita */}
           <h1
