@@ -37,13 +37,13 @@ export function PageMenu({ open, onClose, onOpenUser }: PageMenuProps) {
               onClick={onClose}
               aria-current={active ? "page" : undefined}
               className={cn(
-                "group flex w-fit max-w-[15rem] items-center gap-2.5 rounded-lg py-1.5 pl-2 pr-4 transition-colors",
+                "group flex w-fit max-w-[16rem] items-start gap-2.5 rounded-lg py-1 pl-2 pr-4 transition-colors",
                 active ? "bg-brand/15" : "hover:bg-muted",
               )}
             >
               <span
                 className={cn(
-                  "grid size-7 shrink-0 place-items-center rounded-md transition-colors",
+                  "mt-0.5 grid size-7 shrink-0 place-items-center rounded-md transition-colors",
                   active
                     ? "bg-brand text-brand-foreground"
                     : "bg-muted text-muted-foreground group-hover:text-foreground",
@@ -51,13 +51,18 @@ export function PageMenu({ open, onClose, onOpenUser }: PageMenuProps) {
               >
                 <Icon className="size-3.5" />
               </span>
-              <span
-                className={cn(
-                  "text-sm font-medium",
-                  active ? "text-brand" : "text-foreground",
-                )}
-              >
-                {item.label}
+              <span className="min-w-0 flex-1 leading-tight">
+                <span
+                  className={cn(
+                    "block text-sm font-medium leading-tight",
+                    active ? "text-brand" : "text-foreground",
+                  )}
+                >
+                  {item.label}
+                </span>
+                <span className="block text-[11px] leading-tight text-muted-foreground/70 text-pretty">
+                  {item.hint}
+                </span>
               </span>
             </Link>
           )

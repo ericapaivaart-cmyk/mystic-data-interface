@@ -25,8 +25,8 @@ export function SiteHeader({ onOpenPageMenu }: SiteHeaderProps) {
           aria-label="Data Iris — início"
           className="flex items-center gap-2 rounded-xl py-1 pr-2 transition-opacity hover:opacity-80"
         >
-          <LogoMark className="size-8 text-foreground" />
-          <span className="font-display text-sm font-semibold tracking-tight">
+          <LogoMark className="size-8 text-muted-foreground" />
+          <span className="font-display text-sm font-semibold tracking-tight text-muted-foreground/50">
             Data Iris
           </span>
         </Link>
@@ -52,8 +52,9 @@ export function SiteHeader({ onOpenPageMenu }: SiteHeaderProps) {
         </div>
       </div>
 
-      {/* Header 2 — the two freemium links: left-aligned, transparent, tight to header 1 */}
-      <div className="-mt-1 flex items-center gap-4 px-4">
+      {/* Header 2 — freemium links: stacked, left-aligned, transparent, tight to header 1.
+          Slight left offset so the star icon doesn't sit before the logo. */}
+      <div className="-mt-1 flex flex-col gap-0.5 pl-[26px]">
         {headerLinks.map((item) => {
           const active = pathname === item.href
           const Icon = item.icon
@@ -63,7 +64,7 @@ export function SiteHeader({ onOpenPageMenu }: SiteHeaderProps) {
               href={item.href}
               aria-current={active ? "page" : undefined}
               className={cn(
-                "flex items-center gap-1.5 py-1 text-[11px] font-medium transition-colors",
+                "flex w-fit items-center gap-1.5 py-0.5 text-[11px] font-medium leading-tight transition-colors",
                 active ? "text-brand" : "text-muted-foreground hover:text-foreground",
               )}
             >

@@ -90,7 +90,7 @@ export const pageMenu: NavItem[] = [
   },
 ]
 
-/** The two freemium links that live in Header 2. */
+/** Header 2 freemium links — stacked, left-aligned under the logo. */
 export const headerLinks: NavItem[] = [
   {
     label: "Mapa Astral Grátis",
@@ -103,6 +103,12 @@ export const headerLinks: NavItem[] = [
     href: "/combinacao-de-amor",
     hint: "Sinastria entre dois mapas.",
     icon: Heart,
+  },
+  {
+    label: "Planner",
+    href: "/app/planner",
+    hint: "Organize a rotina com os ciclos a favor.",
+    icon: CalendarDays,
   },
 ]
 

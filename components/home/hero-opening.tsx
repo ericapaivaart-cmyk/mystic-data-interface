@@ -33,9 +33,9 @@ export function HeroOpening() {
       }
     }
 
-    // O vídeo começa antes; depois vai ficando transparente e o título entra.
-    const fade = window.setTimeout(() => setFaded(true), 700)
-    const show = window.setTimeout(() => setReveal(true), 950)
+    // O vídeo começa sozinho; depois vai ficando transparente e então o título entra.
+    const fade = window.setTimeout(() => setFaded(true), 1100)
+    const show = window.setTimeout(() => setReveal(true), 1500)
 
     return () => {
       window.clearTimeout(fade)
@@ -109,11 +109,11 @@ export function HeroOpening() {
           >
             <Link
               href="/data-astral"
-              className="group relative z-20 inline-flex h-[68px] w-full max-w-[340px] items-center justify-between gap-3 rounded-[24px] bg-brand px-5 text-sm font-semibold text-brand-foreground shadow-[0_0_48px_-10px_var(--brand)] transition-shadow hover:shadow-[0_0_64px_-6px_var(--brand)] sm:text-base"
+              className="group relative z-20 inline-flex h-14 w-full max-w-[224px] items-center justify-between gap-2 rounded-[20px] bg-brand pl-3 pr-4 text-[0.8125rem] font-semibold text-brand-foreground shadow-[0_0_44px_-12px_var(--brand)] transition-shadow hover:shadow-[0_0_60px_-8px_var(--brand)]"
             >
-              <LogoMark className="size-8 shrink-0 text-brand-foreground" />
-              <span className="flex-1 whitespace-nowrap text-center">Descubra agora a sua Data!</span>
-              <ArrowRight className="size-5 shrink-0 transition-transform group-hover:translate-x-0.5" />
+              <LogoMark className="size-6 shrink-0 text-brand-foreground" />
+              <span className="flex-1 whitespace-nowrap text-center">Descubra sua Data!</span>
+              <ArrowRight className="size-4 shrink-0 transition-transform group-hover:translate-x-0.5" />
             </Link>
 
             <SpinningBadge />
