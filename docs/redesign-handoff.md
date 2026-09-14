@@ -20,7 +20,8 @@ Em `app/globals.css` (adaptar para o `index.css`/tokens do Lovable):
 ## 3. Componentes do redesign (copiar como referência)
 - `components/home/hero-opening.tsx` — hero: vídeo com fade, título em wipe da esquerda,
   legenda #A3C7E0 com leading 1.35, botão fino/largo (h-12, max-w-[300px], radius 16px),
-  selo giratório maior que o botão, respiro `pb-32` depois do botão.
+  selo giratório maior que o botão, respiro acima do título (`pt-[168px]`, folga do header
+  empilhado) e respiro `pb-32` depois do botão.
 - `components/nav/site-header.tsx` — Header 1 (logo discreto) + Header 2 empilhado à esquerda,
   transparente, colado ao Header 1 (Mapa Astral / Combinação / Planner).
 - `components/nav/page-menu.tsx` — menu de página (direita): compacto, alinhado à esquerda,
