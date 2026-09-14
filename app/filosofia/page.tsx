@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
 import { EssayArticle } from "@/components/filosofia/essay"
+import { Estante } from "@/components/filosofia/estante"
 import { essays, positioning } from "@/lib/filosofia-content"
 import { WHATSAPP_URL } from "@/lib/navigation"
 
@@ -55,6 +56,9 @@ export default function FilosofiaPage() {
             <EssayArticle key={e.id} essay={e} index={i} />
           ))}
         </div>
+
+        {/* A estante — coleção, fontes e autoria */}
+        <Estante />
 
         {/* Fechamento discreto */}
         <section className="mt-24 border-t border-border pt-12">

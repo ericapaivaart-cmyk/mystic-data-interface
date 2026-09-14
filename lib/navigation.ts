@@ -112,5 +112,11 @@ export const headerLinks: NavItem[] = [
   },
 ]
 
+/**
+ * Telas brancas (editorial/landing). O app é dark global no <html>; estas rotas
+ * usam `.theme-light` e por isso o cabeçalho ganha fundo branco discreto ao rolar.
+ */
+export const lightRoutes = ["/filosofia", "/mapa-astral-gratis", "/combinacao-de-amor"]
+
 /** WhatsApp destination for sending info / scheduling with Iris. */
 export const WHATSAPP_URL = "https://wa.me/message/DATAIRIS"

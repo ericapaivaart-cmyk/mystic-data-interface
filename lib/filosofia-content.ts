@@ -15,6 +15,33 @@ export type Essay = {
   gains?: string[]
 }
 
+/**
+ * A estante — coleção e fontes do método, mais a autoria de Iris (livro/curso).
+ * `kind` decide a cor da lombada: "autoria" = azul de marca (destaque único),
+ * "fonte" = tom sobre tom neutro. Erica pode acrescentar a coleção depois.
+ */
+export type Spine = {
+  title: string
+  author: string
+  kind: "autoria" | "fonte"
+  /** disponibilidade opcional, ex.: "em breve" */
+  status?: string
+}
+
+export const shelf = {
+  heading: "A estante",
+  lede: "As fontes sérias que embasam o método — e o que nasceu delas. Ciência, história e psicologia antes de qualquer previsão.",
+  books: [
+    { title: "Data Astral — o livro", author: "Erica Iris", kind: "autoria", status: "em breve" },
+    { title: "O método — curso", author: "Erica Iris", kind: "autoria", status: "em breve" },
+    { title: "Harmonices Mundi", author: "Johannes Kepler", kind: "fonte" },
+    { title: "Tipos Psicológicos", author: "C. G. Jung", kind: "fonte" },
+    { title: "O Livro Vermelho", author: "C. G. Jung", kind: "fonte" },
+    { title: "História da Matemática", author: "Carl B. Boyer", kind: "fonte" },
+    { title: "A Ciência dos Céus", author: "História da astronomia", kind: "fonte" },
+  ] as Spine[],
+}
+
 export const positioning = {
   brand: "Data Iris",
   line: "A primeira astrologia com dados do nosso tempo.",

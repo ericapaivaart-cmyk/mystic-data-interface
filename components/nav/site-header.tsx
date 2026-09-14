@@ -1,10 +1,10 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Menu, Globe } from "lucide-react"
-import { headerLinks } from "@/lib/navigation"
+import { lightRoutes } from "@/lib/navigation"
 import { LogoMark } from "@/components/brand/logo"
 import { cn } from "@/lib/utils"
 
@@ -14,13 +14,36 @@ type SiteHeaderProps = {
 
 export function SiteHeader({ onOpenPageMenu }: SiteHeaderProps) {
   const pathname = usePathname()
-  const isHome = pathname === "/"
   const [lang, setLang] = useState<"PT" | "EN">("PT")
+  const [scrolled, setScrolled] = useState(false)
+
+  // Telas brancas: cabeçalho ganha fundo branco discreto ao rolar, para não
+  // flutuar sobre o texto editorial. Telas escuras ficam sempre transparentes.
+  const isLight = lightRoutes.some((r) => pathname === r || pathname.startsWith(`${r}/`))
+
+  useEffect(() => {
+    if (!isLight) {
+      setScrolled(false)
+      return
+    }
+    const onScroll = () => setScrolled(window.scrollY > 8)
+    onScroll()
+    window.addEventListener("scroll", onScroll, { passive: true })
+    return () => window.removeEventListener("scroll", onScroll)
+  }, [isLight])
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
-      {/* Header 1 — transparent, minimalist, no lines, 3 icons */}
-      <div className="flex h-14 items-center justify-between px-4">
+      {/* Menu universal — transparente e minimalista: logo + idioma + hambúrguer.
+          Nas telas brancas, ganha fundo branco discreto ao rolar (tom sobre tom). */}
+      <div
+        className={cn(
+          "flex h-14 items-center justify-between px-4 transition-colors duration-300",
+          isLight && scrolled
+            ? "bg-background/85 backdrop-blur-md [border-bottom:1px_solid_var(--border)]"
+            : "bg-transparent",
+        )}
+      >
         <Link
           href="/"
           aria-label="Data Iris — início"
@@ -52,32 +75,6 @@ export function SiteHeader({ onOpenPageMenu }: SiteHeaderProps) {
           </button>
         </div>
       </div>
-
-      {/* Header 2 — freemium links: HOME ONLY. On inner pages the flow uses its own
-          in-context CTAs (e.g. Data Astral esteira), so these are hidden to keep
-          editorial/light screens clean. */}
-      {isHome && (
-      <div className="-mt-1 flex flex-col gap-0.5 pl-[26px]">
-        {headerLinks.map((item) => {
-          const active = pathname === item.href
-          const Icon = item.icon
-          return (
-            <Link
-              key={item.href}
-              href={item.href}
-              aria-current={active ? "page" : undefined}
-              className={cn(
-                "flex w-fit items-center gap-1.5 py-0.5 text-[11px] font-medium leading-tight transition-colors",
-                active ? "text-brand" : "text-muted-foreground hover:text-foreground",
-              )}
-            >
-              <Icon className="size-3" />
-              {item.label}
-            </Link>
-          )
-        })}
-      </div>
-      )}
     </header>
   )
 }

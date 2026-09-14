@@ -1,4 +1,5 @@
 import { HeroOpening } from "@/components/home/hero-opening"
+import { EntryBand } from "@/components/home/entry-band"
 import { QuestionsCarousel } from "@/components/home/questions-carousel"
 import { SkyNow } from "@/components/home/sky-now"
 import { HoroscopeSection } from "@/components/home/horoscope-section"
@@ -11,6 +12,10 @@ export default function HomePage() {
     <main>
       {/* Data Astral — abertura e funil */}
       <HeroOpening />
+
+      {/* Os mais buscados — porta de entrada visual (substitui os links do Header 2) */}
+      <EntryBand />
+
       <QuestionsCarousel />
 
       {/* Conteúdo livre, sem login e sem dados pessoais.
