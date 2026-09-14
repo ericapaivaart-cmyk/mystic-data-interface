@@ -1,6 +1,6 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Inter, Poppins } from 'next/font/google'
+import { Inter, Ubuntu } from 'next/font/google'
 import { SiteChrome } from '@/components/nav/site-chrome'
 import './globals.css'
 
@@ -10,10 +10,11 @@ const inter = Inter({
   display: 'swap',
 })
 
-const poppins = Poppins({
+// Ubuntu = fonte de display/headings travada no design system. Peso máximo real = 700.
+const ubuntu = Ubuntu({
   subsets: ['latin'],
-  weight: ['500', '600', '700'],
-  variable: '--font-poppins',
+  weight: ['400', '500', '700'],
+  variable: '--font-ubuntu',
   display: 'swap',
 })
 
@@ -54,7 +55,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`dark ${inter.variable} ${poppins.variable} bg-background`}
+      className={`dark ${inter.variable} ${ubuntu.variable} bg-background`}
     >
       <body className="antialiased font-sans">
         <SiteChrome>{children}</SiteChrome>
