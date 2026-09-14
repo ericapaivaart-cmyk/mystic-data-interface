@@ -57,11 +57,9 @@
   --color-data-red: var(--data-red);
   --color-data-green: var(--data-green);
 
-  /* Fonts */
+  /* Fonts — travado no design system: Ubuntu (display) + Inter (body) */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
-  /* Hero = Ubuntu (idêntico ao site atual) */
-  --font-hero: var(--font-ubuntu), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-ubuntu), ui-sans-serif, system-ui, sans-serif;
 
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);

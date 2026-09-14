@@ -72,7 +72,7 @@ export function HeroOpening() {
 
         <h1
           className={cn(
-            "mt-5 font-hero text-5xl font-bold leading-[0.98] tracking-tight text-balance text-foreground transition-all duration-700 md:text-6xl",
+            "mt-5 font-display text-5xl font-bold leading-[0.98] tracking-tight text-balance text-foreground transition-all duration-700 md:text-6xl",
             mounted ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0",
           )}
           style={{ transitionDelay: "120ms" }}
