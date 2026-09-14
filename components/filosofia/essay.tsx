@@ -1,3 +1,4 @@
+import { Star } from "lucide-react"
 import type { Essay } from "@/lib/filosofia-content"
 
 /**
@@ -32,9 +33,7 @@ export function EssayArticle({ essay, index }: { essay: Essay; index: number }) 
         <ul className="mt-8 grid max-w-[38rem] gap-x-8 gap-y-3 sm:grid-cols-2">
           {essay.gains.map((g) => (
             <li key={g} className="flex gap-2.5 text-sm leading-snug text-foreground">
-              <span aria-hidden className="mt-0.5 text-primary">
-                &#9734;
-              </span>
+              <Star aria-hidden className="mt-0.5 size-3.5 shrink-0 text-primary" />
               <span className="text-pretty">{g}</span>
             </li>
           ))}

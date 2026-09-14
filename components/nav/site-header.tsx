@@ -14,6 +14,7 @@ type SiteHeaderProps = {
 
 export function SiteHeader({ onOpenPageMenu }: SiteHeaderProps) {
   const pathname = usePathname()
+  const isHome = pathname === "/"
   const [lang, setLang] = useState<"PT" | "EN">("PT")
 
   return (
@@ -52,8 +53,10 @@ export function SiteHeader({ onOpenPageMenu }: SiteHeaderProps) {
         </div>
       </div>
 
-      {/* Header 2 — freemium links: stacked, left-aligned, transparent, tight to header 1.
-          Slight left offset so the star icon doesn't sit before the logo. */}
+      {/* Header 2 — freemium links: HOME ONLY. On inner pages the flow uses its own
+          in-context CTAs (e.g. Data Astral esteira), so these are hidden to keep
+          editorial/light screens clean. */}
+      {isHome && (
       <div className="-mt-1 flex flex-col gap-0.5 pl-[26px]">
         {headerLinks.map((item) => {
           const active = pathname === item.href
@@ -74,6 +77,7 @@ export function SiteHeader({ onOpenPageMenu }: SiteHeaderProps) {
           )
         })}
       </div>
+      )}
     </header>
   )
 }
