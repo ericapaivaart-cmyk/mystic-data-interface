@@ -71,12 +71,12 @@ export function HeroOpening() {
         className="absolute inset-0 bg-gradient-to-b from-background/60 via-transparent to-background"
       />
 
-      {/* Conteúdo do hero — ancorado à esquerda */}
-      <div className="relative w-full px-6 pb-16 pt-[120px]">
-        <div className="max-w-lg">
+      {/* Conteúdo do hero — ancorado à esquerda, com margem lateral generosa */}
+      <div className="relative w-full px-8 pb-20 pt-[120px] sm:px-12">
+        <div className="max-w-md">
           {/* Título — wipe da esquerda para a direita */}
           <h1
-            className="font-display text-[2.6rem] font-bold leading-[0.95] tracking-[-0.02em] text-balance text-foreground sm:text-6xl"
+            className="font-display text-[2.5rem] font-bold leading-[1.02] tracking-[-0.02em] text-balance text-foreground sm:text-[3.4rem]"
             style={{
               clipPath: reveal ? "inset(0 0 0 0)" : "inset(0 100% 0 0)",
               opacity: reveal ? 1 : 0,
@@ -89,7 +89,7 @@ export function HeroOpening() {
           {/* Legenda — azul suave, entrelinha reduzida */}
           <p
             className={cn(
-              "mt-6 max-w-md text-pretty text-base font-medium leading-snug text-hero-accent transition-all duration-700",
+              "mt-8 max-w-[19rem] text-pretty text-[0.95rem] font-medium leading-relaxed text-hero-accent transition-all duration-700",
               reveal ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0",
             )}
             style={{ transitionDelay: "300ms" }}
@@ -102,7 +102,7 @@ export function HeroOpening() {
           {/* Botão + selo — selo à direita, metade atrás do botão */}
           <div
             className={cn(
-              "relative mt-9 flex items-center transition-all duration-700",
+              "relative mt-12 flex items-center transition-all duration-700",
               reveal ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0",
             )}
             style={{ transitionDelay: "560ms" }}
