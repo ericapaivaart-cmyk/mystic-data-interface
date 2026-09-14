@@ -56,7 +56,7 @@ export function UserMenu({ open, onClose }: UserMenuProps) {
       <Link
         href="/criar-conta"
         onClick={onClose}
-        className="mb-6 flex w-fit items-center gap-2 rounded-xl bg-brand px-4 py-2.5 text-[13px] font-semibold text-brand-foreground transition-opacity hover:opacity-90"
+        className="mb-6 flex w-full items-center justify-center gap-2 rounded-xl bg-brand px-4 py-3 text-[13px] font-semibold text-brand-foreground transition-opacity hover:opacity-90"
       >
         Entrar ou criar conta
       </Link>
