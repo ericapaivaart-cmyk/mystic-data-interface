@@ -43,8 +43,8 @@ Tipografia (cores):
   - Cards grandes: `rounded-2xl`/`rounded-3xl`.
   - Botões (info + CTA): cantos arredondados MAS com o quadrado central (squircle), nunca pill.
   - Pills (`rounded-full`): só para badges/detalhes finos.
-- Sombras: minimalistas. Dark = sem sombras pesadas; Light = sombras difusas elegantes.
-- App padrão em **dark mode** (`<html className="dark">`).
+- Sombras: minimalistas. Telas pretas = sem sombras pesadas; telas brancas = sombras difusas elegantes.
+- **Tema híbrido fixo, sem toggle** (ver seção abaixo): cada tela é branca OU preta por design.
 
 ## Ritmo tipográfico & hierarquia (travado)
 
@@ -61,6 +61,42 @@ Baseline do hero (reutilizar no app):
 - **Legenda:** `0.8125rem` (13px), `font-medium`; **`leading: 1.35`**; cor `hero-accent` (#A3C7E0); medida estreita (`max-w-[17rem]`).
 - **Ritmo vertical:** título → legenda `mt-7`; legenda → botão `mt-12`; respiro após o botão `pb-32`.
 - **Botão do hero** menor que o bloco de conteúdo; **selo/badge maior que o botão**.
+
+## Tema híbrido fixo — SEM toggle claro/escuro (travado)
+
+O webapp NÃO tem alternância de tema. NÃO existe modo claro/escuro selecionável nem reação a
+`prefers-color-scheme`.
+- O app é **híbrido e fixo**: cada tela é autorada como tela BRANCA ou tela PRETA, decidido por
+  tela no design — e permanece assim para todos os usuários.
+- Não implementar theme switcher, não usar `dark:` como opção do usuário, não seguir o SO. Tela
+  "branca" é branca para todos; tela "preta" é preta para todos.
+- O viewport claro/escuro do preview do v0 é só artefato de preview; não deve dirigir o tema real.
+
+## Superfícies de telas limpas + botões sólidos (ref: checkout Vercel)
+
+Mesma disciplina nos dois tipos de tela: um "vazio" base, regiões claras criadas por
+preenchimento sutil (NÃO por borda), um elemento focal, ações de cor sólida.
+
+Telas brancas (regiões claras sobre branco):
+- Vazio base: branco puro `#FFFFFF`.
+- Preenchimento de região/card/input: cinza sutil `#F6F7F9`. Separação por FILL, não por outline.
+- Hairline (só quando inevitável, ex.: divisor "OU" ou card salvo): `#E5E7EB`, 1px, tom-sobre-tom.
+- Títulos de seção: preto `#0F172A`, bold, pequeno. Rótulos/legendas: cinza `#6B7280`.
+- Número focal domina (ex.: preço), preto bold, com linha discreta acima.
+
+Telas pretas (regiões escuras sobre preto):
+- Vazio base: quase-preto `#05050A`. Card/input: `#141518` / `#1C1D21` (neutros sem azul).
+- Hairline quando necessário: branco-sobre-preto tom-sobre-tom, baixíssima opacidade.
+- Títulos: quase-branco. Rótulos/legendas: cinza neutro `#9A9BA1`.
+
+Botões (nos dois tipos) — desenho do checkout Vercel:
+- Forma: preenchido, **cor sólida**, arredondado (squircle) — checkout `~6px`; hero/primário
+  16–24px. Largura total para checkout/compromisso e menus laterais; mais curto no hero.
+- Preenchimento usa SÓ a paleta do manual: azul de marca `#0B85FF`; confirmação pode usar o
+  data-green; ação neutra/discreta cinza com texto branco (ex.: "Sair"). NUNCA o verde/azul
+  literais do Stripe — eles são referência de FORMA, não nossas cores.
+- Rótulo centralizado, medium/semibold; loading troca por "Processando…" + spinner mantendo o
+  fill. Sem botões só-contorno.
 
 ## Respiro ao final de blocos + escala neutra (travado)
 
