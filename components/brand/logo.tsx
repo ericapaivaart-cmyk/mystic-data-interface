@@ -11,7 +11,7 @@ type LogoMarkProps = {
  * sits behind it — solid color over the void, per the Mystic Data system.
  * Fills with currentColor so it themes automatically.
  */
-export function LogoMark({ className, title = 'Data Astral' }: LogoMarkProps) {
+export function LogoMark({ className, title = 'Data Iris' }: LogoMarkProps) {
   return (
     <svg
       viewBox="0 0 1080 1080"
@@ -43,7 +43,7 @@ export function Logo({ className, markClassName, showWordmark = true }: LogoProp
       <LogoMark className={cn('h-7 w-7 text-foreground', markClassName)} />
       {showWordmark ? (
         <span className="font-serif text-lg font-semibold tracking-tight text-foreground">
-          Data Astral
+          Data Iris
         </span>
       ) : null}
     </span>

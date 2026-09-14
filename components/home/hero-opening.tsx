@@ -76,7 +76,7 @@ export function HeroOpening() {
         <div className="max-w-md">
           {/* Título — wipe da esquerda para a direita */}
           <h1
-            className="font-display text-[2.5rem] font-bold leading-[1.02] tracking-[-0.02em] text-balance text-foreground sm:text-[3.4rem]"
+            className="font-display text-[2.5rem] font-bold leading-[1.02] tracking-[-0.035em] text-balance text-foreground sm:text-[3.4rem]"
             style={{
               clipPath: reveal ? "inset(0 0 0 0)" : "inset(0 100% 0 0)",
               opacity: reveal ? 1 : 0,
@@ -89,7 +89,7 @@ export function HeroOpening() {
           {/* Legenda — azul suave, entrelinha reduzida */}
           <p
             className={cn(
-              "mt-8 max-w-[19rem] text-pretty text-[0.95rem] font-medium leading-relaxed text-hero-accent transition-all duration-700",
+              "mt-7 max-w-[17rem] text-pretty text-[0.8125rem] font-medium leading-[1.35] text-hero-accent transition-all duration-700",
               reveal ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0",
             )}
             style={{ transitionDelay: "300ms" }}
@@ -112,7 +112,7 @@ export function HeroOpening() {
               className="group relative z-20 inline-flex h-[68px] w-full max-w-[340px] items-center justify-between gap-3 rounded-[24px] bg-brand px-5 text-sm font-semibold text-brand-foreground shadow-[0_0_48px_-10px_var(--brand)] transition-shadow hover:shadow-[0_0_64px_-6px_var(--brand)] sm:text-base"
             >
               <LogoMark className="size-8 shrink-0 text-brand-foreground" />
-              <span className="flex-1 text-center">Descubra agora a sua Data!</span>
+              <span className="flex-1 whitespace-nowrap text-center">Descubra agora a sua Data!</span>
               <ArrowRight className="size-5 shrink-0 transition-transform group-hover:translate-x-0.5" />
             </Link>
 

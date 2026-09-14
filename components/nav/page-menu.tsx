@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { UserRound, LogIn, ChevronRight } from "lucide-react"
+import { UserRound, LogIn } from "lucide-react"
 import { Drawer } from "./drawer"
 import { pageMenu } from "@/lib/navigation"
 import { cn } from "@/lib/utils"
@@ -26,7 +26,7 @@ export function PageMenu({ open, onClose, onOpenUser }: PageMenuProps) {
       title="Navegar"
       subtitle="Tudo o que o Data Astral faz por você."
     >
-      <nav className="flex flex-col gap-1">
+      <nav className="flex flex-col gap-0.5">
         {pageMenu.map((item) => {
           const active = pathname === item.href
           const Icon = item.icon
@@ -37,39 +37,27 @@ export function PageMenu({ open, onClose, onOpenUser }: PageMenuProps) {
               onClick={onClose}
               aria-current={active ? "page" : undefined}
               className={cn(
-                "group flex items-start gap-3 rounded-xl px-3 py-2 transition-colors",
+                "group flex w-fit max-w-[15rem] items-center gap-2.5 rounded-lg py-1.5 pl-2 pr-4 transition-colors",
                 active ? "bg-brand/15" : "hover:bg-muted",
               )}
             >
               <span
                 className={cn(
-                  "mt-0.5 grid size-8 shrink-0 place-items-center rounded-lg transition-colors",
+                  "grid size-7 shrink-0 place-items-center rounded-md transition-colors",
                   active
                     ? "bg-brand text-brand-foreground"
                     : "bg-muted text-muted-foreground group-hover:text-foreground",
                 )}
               >
-                <Icon className="size-4" />
+                <Icon className="size-3.5" />
               </span>
-              <span className="min-w-0 flex-1">
-                <span className="flex items-center gap-2">
-                  <span
-                    className={cn(
-                      "text-sm font-medium",
-                      active ? "text-brand" : "text-foreground",
-                    )}
-                  >
-                    {item.label}
-                  </span>
-                  {item.badge ? (
-                    <span className="rounded-full bg-surface-dark px-1.5 py-0.5 text-[10px] font-medium uppercase tracking-wide text-surface-dark-foreground">
-                      {item.badge}
-                    </span>
-                  ) : null}
-                </span>
-                <span className="mt-0.5 block text-xs leading-snug text-muted-foreground text-pretty">
-                  {item.hint}
-                </span>
+              <span
+                className={cn(
+                  "text-sm font-medium",
+                  active ? "text-brand" : "text-foreground",
+                )}
+              >
+                {item.label}
               </span>
             </Link>
           )
@@ -77,31 +65,29 @@ export function PageMenu({ open, onClose, onOpenUser }: PageMenuProps) {
       </nav>
 
       {/* account section — opens the LEFT user drawer, no separator line */}
-      <div className="mt-4 flex flex-col gap-1">
-        <p className="px-3 pb-1 text-[11px] font-medium uppercase tracking-wide text-muted-foreground/70">
+      <div className="mt-5 flex flex-col gap-0.5">
+        <p className="pb-1 pl-2 text-[11px] font-medium uppercase tracking-wide text-muted-foreground/70">
           Sua conta
         </p>
         <button
           type="button"
           onClick={onOpenUser}
-          className="group flex items-center gap-3 rounded-xl px-3 py-2.5 text-left transition-colors hover:bg-muted"
+          className="group flex w-fit max-w-[15rem] items-center gap-2.5 rounded-lg py-1.5 pl-2 pr-4 text-left transition-colors hover:bg-muted"
         >
-          <span className="grid size-8 shrink-0 place-items-center rounded-lg bg-muted text-muted-foreground group-hover:text-foreground">
-            <UserRound className="size-4" />
+          <span className="grid size-7 shrink-0 place-items-center rounded-md bg-muted text-muted-foreground group-hover:text-foreground">
+            <UserRound className="size-3.5" />
           </span>
-          <span className="flex-1 text-sm font-medium">Meus Dados</span>
-          <ChevronRight className="size-4 text-muted-foreground" />
+          <span className="text-sm font-medium">Meus Dados</span>
         </button>
         <button
           type="button"
           onClick={onOpenUser}
-          className="group flex items-center gap-3 rounded-xl px-3 py-2.5 text-left transition-colors hover:bg-muted"
+          className="group flex w-fit max-w-[15rem] items-center gap-2.5 rounded-lg py-1.5 pl-2 pr-4 text-left transition-colors hover:bg-muted"
         >
-          <span className="grid size-8 shrink-0 place-items-center rounded-lg bg-muted text-muted-foreground group-hover:text-foreground">
-            <LogIn className="size-4" />
+          <span className="grid size-7 shrink-0 place-items-center rounded-md bg-muted text-muted-foreground group-hover:text-foreground">
+            <LogIn className="size-3.5" />
           </span>
-          <span className="flex-1 text-sm font-medium">Entrar ou criar conta</span>
-          <ChevronRight className="size-4 text-muted-foreground" />
+          <span className="text-sm font-medium">Entrar ou criar conta</span>
         </button>
       </div>
     </Drawer>
