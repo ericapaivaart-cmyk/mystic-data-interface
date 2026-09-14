@@ -19,7 +19,7 @@ const ubuntu = Ubuntu({
 })
 
 export const metadata: Metadata = {
-  title: 'Data Astral — Iris',
+  title: 'Data Iris',
   description:
     'Astrologia como ferramenta: planejamento, gestão emocional e dados. Descubra a próxima data favorável.',
   generator: 'v0.app',
