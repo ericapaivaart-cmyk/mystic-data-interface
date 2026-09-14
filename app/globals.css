@@ -181,6 +181,34 @@
   --sidebar-ring: #0b85ff;
 }
 
+/*
+  Escopo de tema CLARO dentro do app híbrido-fixo.
+  O <html> é `dark` global; telas brancas (editorial/foco) recebem `.theme-light`
+  no wrapper para reescrever os tokens neste subtree — sem toggle, sem prefers-color-scheme.
+  Rampa neutra Vercel/Stripe: branco → cinzas → um único azul de destaque.
+*/
+.theme-light {
+  color-scheme: light;
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --card: #f6f7f9;
+  --card-foreground: #0f172a;
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+  --primary: #0b85ff;
+  --primary-foreground: #f8fafc;
+  --secondary: #f6f7f9;
+  --secondary-foreground: #0f172a;
+  --muted: #f6f7f9;
+  --muted-foreground: #6b7280;
+  --accent: #f6f7f9;
+  --accent-foreground: #0f172a;
+  --destructive: #e11d48;
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: #0b85ff;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

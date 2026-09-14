@@ -6,6 +6,7 @@ import {
   Sun,
   Moon,
   Activity,
+  BookOpen,
   CalendarDays,
   CreditCard,
   MessageCircle,
@@ -68,6 +69,12 @@ export const pageMenu: NavItem[] = [
     href: "/transitos",
     hint: "Modular a energia: ação ou recolhimento.",
     icon: Activity,
+  },
+  {
+    label: "Filosofia",
+    href: "/filosofia",
+    hint: "O método: prever é planejar, nunca adivinhar.",
+    icon: BookOpen,
   },
   {
     label: "Planos e Créditos",
