@@ -22,12 +22,12 @@ export function SiteHeader({ onOpenPageMenu }: SiteHeaderProps) {
       <div className="flex h-14 items-center justify-between px-4">
         <Link
           href="/"
-          aria-label="Data Astral — início"
+          aria-label="Data Iris — início"
           className="flex items-center gap-2 rounded-xl py-1 pr-2 transition-opacity hover:opacity-80"
         >
           <LogoMark className="size-8 text-foreground" />
           <span className="font-display text-sm font-semibold tracking-tight">
-            Data Astral
+            Data Iris
           </span>
         </Link>
 
@@ -52,8 +52,8 @@ export function SiteHeader({ onOpenPageMenu }: SiteHeaderProps) {
         </div>
       </div>
 
-      {/* Header 2 — the two freemium links */}
-      <div className="flex h-11 items-center gap-2 px-4">
+      {/* Header 2 — the two freemium links: left-aligned, transparent, tight to header 1 */}
+      <div className="-mt-1 flex items-center gap-4 px-4">
         {headerLinks.map((item) => {
           const active = pathname === item.href
           const Icon = item.icon
@@ -63,13 +63,11 @@ export function SiteHeader({ onOpenPageMenu }: SiteHeaderProps) {
               href={item.href}
               aria-current={active ? "page" : undefined}
               className={cn(
-                "flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-colors",
-                active
-                  ? "bg-brand/15 text-brand"
-                  : "bg-card/70 text-muted-foreground backdrop-blur-sm hover:text-foreground",
+                "flex items-center gap-1.5 py-1 text-[11px] font-medium transition-colors",
+                active ? "text-brand" : "text-muted-foreground hover:text-foreground",
               )}
             >
-              <Icon className="size-3.5" />
+              <Icon className="size-3" />
               {item.label}
             </Link>
           )
