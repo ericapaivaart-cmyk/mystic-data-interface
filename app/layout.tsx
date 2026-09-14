@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Inter, Poppins } from 'next/font/google'
+import { SiteChrome } from '@/components/nav/site-chrome'
 import './globals.css'
 
 const inter = Inter({
@@ -17,8 +18,9 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: 'Mystic Data',
-  description: 'Dados astrais estruturados com acolhimento.',
+  title: 'Data Astral — Iris',
+  description:
+    'Astrologia como ferramenta: planejamento, gestão emocional e dados. Descubra a próxima data favorável.',
   generator: 'v0.app',
   icons: {
     icon: [
@@ -55,7 +57,7 @@ export default function RootLayout({
       className={`dark ${inter.variable} ${poppins.variable} bg-background`}
     >
       <body className="antialiased font-sans">
-        {children}
+        <SiteChrome>{children}</SiteChrome>
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
