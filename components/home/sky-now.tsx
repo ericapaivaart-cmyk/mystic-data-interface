@@ -12,10 +12,14 @@ const CENTER = 120
 const SIGN_R = 104
 const PLANET_R = 74
 
+// Arredonda para 3 casas: server (Node) e client (V8) emitem a MESMA string
+// nos atributos do SVG, evitando hydration mismatch por precisão de float.
+const round3 = (n: number) => Math.round(n * 1000) / 1000
+
 function polar(longitude: number, r: number) {
   // 0° Áries no topo, longitude cresce no sentido horário.
   const rad = ((longitude - 90) * Math.PI) / 180
-  return { x: CENTER + r * Math.cos(rad), y: CENTER + r * Math.sin(rad) }
+  return { x: round3(CENTER + r * Math.cos(rad)), y: round3(CENTER + r * Math.sin(rad)) }
 }
 
 function signOf(longitude: number) {
