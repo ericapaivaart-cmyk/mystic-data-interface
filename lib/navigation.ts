@@ -7,7 +7,6 @@ import {
   Moon,
   Activity,
   CalendarDays,
-  BookOpen,
   CreditCard,
   MessageCircle,
 } from "lucide-react"
@@ -69,12 +68,6 @@ export const pageMenu: NavItem[] = [
     href: "/transitos",
     hint: "Modular a energia: ação ou recolhimento.",
     icon: Activity,
-  },
-  {
-    label: "Artigos",
-    href: "/artigos",
-    hint: "O método, o escopo e o propósito.",
-    icon: BookOpen,
   },
   {
     label: "Planos e Créditos",
