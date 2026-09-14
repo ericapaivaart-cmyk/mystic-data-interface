@@ -62,6 +62,26 @@ Baseline do hero (reutilizar no app):
 - **Ritmo vertical:** título → legenda `mt-7`; legenda → botão `mt-12`; respiro após o botão `pb-32`.
 - **Botão do hero** menor que o bloco de conteúdo; **selo/badge maior que o botão**.
 
+## Respiro ao final de blocos + escala neutra (travado)
+
+Respiro de fechamento (vazio ao final):
+- Todo bloco/seção fecha com espaço vazio real ABAIXO antes do próximo bloco — a pausa faz
+  parte do ritmo. Baseline do hero: `pb-32` após o botão; manter proporcional nas seções.
+- Regra do ritmo: apertado DENTRO do grupo (letras, linhas, rótulo→valor), generoso ENTRE
+  grupos e no FIM de cada bloco.
+
+Escala neutra — padrão Vercel / Stripe (superfícies claras):
+- Em telas claras/brancas use rampa neutra limpa: **branco → cinzas claros** (Vercel, Stripe,
+  Linear). O branco é o vazio; cinzas claros levam texto secundário, rótulos discretos e
+  separação tom-sobre-tom. SEM painéis coloridos atrás do conteúdo.
+- Só UMA cor de marca salta no campo neutro (azul `#0B85FF`, ou turquesa/menta quando couber).
+  O resto fica neutro para o acento pousar.
+- É a contraparte clara do tema escuro (`#05050A` + cinzas neutros). Mesma disciplina: campo
+  vazio, texto neutro, um acento sólido, sem bordas (outline só tom-sobre-tom).
+- Neutros claros sugeridos (confirmar como tokens): bg `#FFFFFF`, superfície sutil `#F6F7F9`,
+  hairline `#E5E7EB`, texto secundário `#6B7280`, texto primário `#0F172A`. Alto contraste,
+  legível em tamanhos pequenos.
+
 ## Checkout / pagamento (ref: Stripe Link)
 
 - **Número focal primeiro:** o preço é o maior elemento, bold, centralizado, com linha do
