@@ -139,11 +139,11 @@
   --popover-foreground: #f8fafc;
   --primary: #0b85ff;
   --primary-foreground: #f8fafc;
-  --secondary: #3a4b66;
+  --secondary: #26272c;
   --secondary-foreground: #f8fafc;
-  --muted: #161a2b;
-  --muted-foreground: #94a3b8;
-  --accent: #3a4b66;
+  --muted: #1c1d21;
+  --muted-foreground: #9a9ba1;
+  --accent: #26272c;
   --accent-foreground: #f8fafc;
   --destructive: #e11d48;
   --border: rgba(148, 163, 184, 0.14);
