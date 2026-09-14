@@ -37,7 +37,7 @@ export function PageMenu({ open, onClose, onOpenUser }: PageMenuProps) {
               onClick={onClose}
               aria-current={active ? "page" : undefined}
               className={cn(
-                "group flex items-start gap-3 rounded-xl px-3 py-2.5 transition-colors",
+                "group flex items-start gap-3 rounded-xl px-3 py-2 transition-colors",
                 active ? "bg-brand/15" : "hover:bg-muted",
               )}
             >

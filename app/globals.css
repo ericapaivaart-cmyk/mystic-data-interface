@@ -57,6 +57,9 @@
   --color-data-red: var(--data-red);
   --color-data-green: var(--data-green);
 
+  /* Hero — azul suave de contraste no texto/selo (só o botão usa o brand vibrante) */
+  --color-hero-accent: var(--hero-accent);
+
   /* Fonts — travado no design system: Ubuntu (display) + Inter (body) */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-ubuntu), ui-sans-serif, system-ui, sans-serif;
@@ -103,6 +106,7 @@
   /* brand + data */
   --brand: #0b85ff;
   --brand-foreground: #f8fafc;
+  --hero-accent: #a3c7e0;
   --data-red: #e11d48;
   --data-green: #4ade80;
 
@@ -157,6 +161,7 @@
   /* brand + data */
   --brand: #0b85ff;
   --brand-foreground: #f8fafc;
+  --hero-accent: #a3c7e0;
   --data-red: #e11d48;
   --data-green: #4ade80;
 

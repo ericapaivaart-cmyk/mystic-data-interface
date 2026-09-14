@@ -32,7 +32,6 @@ export const pageMenu: NavItem[] = [
     href: "/data-astral",
     hint: "A próxima data favorável para o que importa.",
     icon: Sparkles,
-    badge: "low ticket",
   },
   {
     label: "Mapa Astral Grátis",
