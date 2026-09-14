@@ -2,10 +2,30 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { UserRound, LogIn } from "lucide-react"
+import { UserRound, LogIn, Mail, MessageCircle } from "lucide-react"
 import { Drawer } from "./drawer"
-import { pageMenu } from "@/lib/navigation"
+import { pageMenu, WHATSAPP_URL } from "@/lib/navigation"
 import { cn } from "@/lib/utils"
+
+/** lucide-style stroke Instagram glyph (not shipped in this lucide version). */
+function InstagramIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+    </svg>
+  )
+}
 
 type PageMenuProps = {
   open: boolean
@@ -23,8 +43,38 @@ export function PageMenu({ open, onClose, onOpenUser }: PageMenuProps) {
       onClose={onClose}
       side="right"
       compact
-      title="Navegar"
-      subtitle="Tudo o que o Data Astral faz por você."
+      hideTitle
+      title="Menu"
+      subtitle="Tudo que Iris faz por você"
+      footer={
+        <div className="flex items-center justify-end gap-4 pr-1">
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp"
+            className="text-brand transition-opacity hover:opacity-70"
+          >
+            <MessageCircle className="size-6" />
+          </a>
+          <a
+            href="https://instagram.com/datairis"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="text-brand transition-opacity hover:opacity-70"
+          >
+            <InstagramIcon className="size-6" />
+          </a>
+          <a
+            href="mailto:contato@datairis.app"
+            aria-label="E-mail"
+            className="text-brand transition-opacity hover:opacity-70"
+          >
+            <Mail className="size-6" />
+          </a>
+        </div>
+      }
     >
       <nav className="flex flex-col gap-0.5">
         {pageMenu.map((item) => {
@@ -43,13 +93,13 @@ export function PageMenu({ open, onClose, onOpenUser }: PageMenuProps) {
             >
               <span
                 className={cn(
-                  "mt-0.5 grid size-7 shrink-0 place-items-center rounded-md transition-colors",
+                  "grid size-9 shrink-0 place-items-center rounded-lg transition-colors",
                   active
                     ? "bg-brand text-brand-foreground"
                     : "bg-muted text-muted-foreground group-hover:text-foreground",
                 )}
               >
-                <Icon className="size-3.5" />
+                <Icon className="size-[18px]" />
               </span>
               <span className="min-w-0 flex-1 leading-tight">
                 <span
@@ -79,8 +129,8 @@ export function PageMenu({ open, onClose, onOpenUser }: PageMenuProps) {
           onClick={onOpenUser}
           className="group flex w-fit max-w-[15rem] items-center gap-2.5 rounded-lg py-1.5 pl-2 pr-4 text-left transition-colors hover:bg-muted"
         >
-          <span className="grid size-7 shrink-0 place-items-center rounded-md bg-muted text-muted-foreground group-hover:text-foreground">
-            <UserRound className="size-3.5" />
+          <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-muted text-muted-foreground group-hover:text-foreground">
+            <UserRound className="size-[18px]" />
           </span>
           <span className="text-sm font-medium">Meus Dados</span>
         </button>
@@ -89,8 +139,8 @@ export function PageMenu({ open, onClose, onOpenUser }: PageMenuProps) {
           onClick={onOpenUser}
           className="group flex w-fit max-w-[15rem] items-center gap-2.5 rounded-lg py-1.5 pl-2 pr-4 text-left transition-colors hover:bg-muted"
         >
-          <span className="grid size-7 shrink-0 place-items-center rounded-md bg-muted text-muted-foreground group-hover:text-foreground">
-            <LogIn className="size-3.5" />
+          <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-muted text-muted-foreground group-hover:text-foreground">
+            <LogIn className="size-[18px]" />
           </span>
           <span className="text-sm font-medium">Entrar ou criar conta</span>
         </button>

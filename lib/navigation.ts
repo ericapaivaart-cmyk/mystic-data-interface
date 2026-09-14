@@ -40,10 +40,17 @@ export const pageMenu: NavItem[] = [
     icon: Star,
   },
   {
-    label: "Combinação de Amor",
+    label: "Combinação de Mapas",
     href: "/combinacao-de-amor",
     hint: "Sinastria: a compatibilidade entre dois mapas.",
     icon: Heart,
+  },
+  {
+    label: "Planner",
+    href: "/app/planner",
+    hint: "Organize a rotina com os ciclos a favor.",
+    icon: CalendarDays,
+    badge: "assinatura",
   },
   {
     label: "Horóscopo",
@@ -58,17 +65,10 @@ export const pageMenu: NavItem[] = [
     icon: Moon,
   },
   {
-    label: "Trânsitos",
+    label: "Céu Agora",
     href: "/transitos",
     hint: "Modular a energia: ação ou recolhimento.",
     icon: Activity,
-  },
-  {
-    label: "Planner",
-    href: "/app/planner",
-    hint: "Organize a rotina com os ciclos a favor.",
-    icon: CalendarDays,
-    badge: "assinatura",
   },
   {
     label: "Artigos",

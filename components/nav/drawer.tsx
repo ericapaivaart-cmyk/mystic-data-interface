@@ -15,6 +15,8 @@ type DrawerProps = {
   footer?: ReactNode
   /** compact = narrower panel + tighter spacing (page menu) */
   compact?: boolean
+  /** keep title for aria-label but don't render it visibly */
+  hideTitle?: boolean
 }
 
 export function Drawer({
@@ -26,6 +28,7 @@ export function Drawer({
   children,
   footer,
   compact = false,
+  hideTitle = false,
 }: DrawerProps) {
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
@@ -65,7 +68,7 @@ export function Drawer({
         aria-modal="true"
         aria-label={title}
         className={cn(
-          "absolute inset-y-0 flex h-full flex-col bg-card text-card-foreground shadow-2xl shadow-black/40 transition-transform duration-300 ease-out",
+          "dark absolute inset-y-0 flex h-full flex-col bg-[#141518] text-card-foreground shadow-2xl shadow-black/50 transition-transform duration-300 ease-out",
           side === "right" ? "right-0 rounded-l-3xl" : "left-0 rounded-r-3xl",
           compact ? "w-[80%] max-w-xs" : "w-[86%] max-w-sm",
           open
@@ -82,11 +85,22 @@ export function Drawer({
           )}
         >
           <div className="min-w-0">
-            <h2 className="font-display text-lg font-semibold tracking-tight">
-              {title}
-            </h2>
+            {hideTitle ? (
+              <h2 className="sr-only">{title}</h2>
+            ) : (
+              <h2 className="font-display text-lg font-semibold tracking-tight">
+                {title}
+              </h2>
+            )}
             {subtitle ? (
-              <p className="mt-1 text-xs leading-relaxed text-muted-foreground text-pretty">
+              <p
+                className={cn(
+                  "text-pretty text-muted-foreground",
+                  hideTitle
+                    ? "text-sm font-medium leading-snug text-foreground/90"
+                    : "mt-1 text-xs leading-relaxed",
+                )}
+              >
                 {subtitle}
               </p>
             ) : null}
