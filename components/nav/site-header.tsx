@@ -3,8 +3,9 @@
 import { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Menu, Globe, Star } from "lucide-react"
+import { Menu, Globe } from "lucide-react"
 import { headerLinks } from "@/lib/navigation"
+import { LogoMark } from "@/components/brand/logo"
 import { cn } from "@/lib/utils"
 
 type SiteHeaderProps = {
@@ -24,9 +25,7 @@ export function SiteHeader({ onOpenPageMenu }: SiteHeaderProps) {
           aria-label="Data Astral — início"
           className="flex items-center gap-2 rounded-xl py-1 pr-2 transition-opacity hover:opacity-80"
         >
-          <span className="grid size-8 place-items-center rounded-xl bg-brand text-brand-foreground">
-            <Star className="size-4" />
-          </span>
+          <LogoMark className="size-8 text-foreground" />
           <span className="font-display text-sm font-semibold tracking-tight">
             Data Astral
           </span>
