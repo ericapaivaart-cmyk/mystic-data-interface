@@ -139,6 +139,23 @@ Escala neutra — padrão Vercel / Stripe (superfícies claras):
 - Redes sociais (WhatsApp, Instagram, E-mail) no rodapé do menu de página, à direita.
 - Botão "Sair" em cinza neutro com texto branco (nada de azul escuro).
 
+## Tela de espera / ritual — Firmamento (travado, 2026-09-15)
+
+A espera é a experiência, não um diagrama astral. O visual travado é o **Firmamento**: um céu
+FLAT, minimalista.
+- A maioria das estrelas fica QUIETA e cintila de leve; **3 estrelas escolhidas se acendem em
+  sequência** (subindo para a direita), ligadas por uma linha fina que se desenha — como quem lê
+  o céu e encontra a próxima janela favorável.
+- SVG/CSS determinístico (sem risco de hidratação). Congela no estado final com
+  `prefers-reduced-motion`.
+- **PROIBIDO:** órbita, espiral, roleta, calendário girando, "efeitos mágicos". Espiral = hipnose/
+  enrolação; órbita = real, mas longe do conhecimento popular; roleta = sorte/adivinhação. O clima
+  é "consultar o céu", nunca sorte.
+- Implementação de referência: `components/data-astral/firmamento.tsx` + keyframes `da-twinkle` /
+  `da-emerge` / `da-draw` / `da-breathe` em `globals.css`. (Aposentou o antigo `orbit-spheres`.)
+- Frase de espera/manifesto permitida aqui: "Somos poeira de estrelas, mas o que dá energia da
+  vida é o Sol." (manifesto/"Sobre"/espera — NUNCA em tela funcional).
+
 ## Direção & anti-padrões (travados)
 
 Produto premium e confidencial; o cliente é leigo e quer clareza sobre a *própria vida*, não
@@ -161,3 +178,11 @@ Referência de contenção de cor: Personare. Referência de forma/espaço: v0 (
 Planejamento + gestão emocional + dados. **NUNCA** adivinhação/futurologia.
 Feature-assinatura: **Data Astral** (algoritmo proprietário de "próxima melhor data"),
 marketing como "Mapa Astral Grátis" + "Combinação de Amor".
+
+O minimalismo NÃO é só estética — é **filtro estratégico**: tipografia contida, muito espaço,
+poucos elementos e o firmamento flat repelem o público de "feitiço/magia" e atraem o de
+astrologia. Menos elementos = triagem de público.
+
+> A voz da marca, o modelo de negócio, preços, personas, segredos (tarô/sinastria) e a
+> blindagem jurídica-por-arquitetura estão em **`docs/data-astral-strategy.md`**. Leia os dois
+> juntos: este arquivo governa a FORMA; o de estratégia governa a COPY e as decisões de produto.
