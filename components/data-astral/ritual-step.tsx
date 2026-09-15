@@ -1,7 +1,7 @@
 "use client"
 
 import { ArrowRight, History } from "lucide-react"
-import { OrbitSpheres } from "./orbit-spheres"
+import { Firmamento } from "./firmamento"
 
 type RitualStepProps = {
   remaining: number
@@ -23,8 +23,8 @@ export function RitualStep({
 }: RitualStepProps) {
   return (
     <div className="flex flex-col items-center text-center">
-      <div className="mt-4 opacity-90">
-        <OrbitSpheres size={148} />
+      <div className="mt-4 w-full max-w-[260px] opacity-90">
+        <Firmamento height={130} />
       </div>
 
       <p className="mt-8 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand">
@@ -34,9 +34,9 @@ export function RitualStep({
         Respire. A pergunta certa já é meio caminho.
       </h1>
       <p className="mt-4 max-w-[20rem] text-pretty text-[0.875rem] leading-relaxed text-muted-foreground">
-        [ÁUDIO] Aqui a gente não adivinha nada. A gente cruza o seu mapa com o
-        céu e encontra a próxima data favorável para o que te move — com um
-        conselho para chegar nela inteiro.
+        [ÁUDIO] A astrologia lê os ventos. A gente cruza o seu mapa com o céu
+        real e encontra a próxima data favorável para o que te move — com um
+        conselho para você chegar nela inteiro.
       </p>
 
       <button

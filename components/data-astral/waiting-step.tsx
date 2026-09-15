@@ -1,16 +1,16 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { OrbitSpheres } from "./orbit-spheres"
+import { Firmamento } from "./firmamento"
 
 type WaitingStepProps = {
   onDone: () => void
 }
 
 /**
- * Espera = motion minimalista (órbita sutil) + 1 linha do método por vez.
+ * Espera = firmamento flat (algumas estrelas se acendem) + 1 linha do método por vez.
  * Tempo simulado (~2.6s). No deploy real, resolve quando o algoritmo responder.
- * Nada de roleta/calendário girando — isso lembraria sorte/adivinhação.
+ * Nada de órbita/espiral/roleta — o clima é "consultar o céu", não sorte/hipnose.
  */
 const LINES = [
   "Lendo o céu do momento…",
@@ -38,7 +38,7 @@ export function WaitingStep({ onDone }: WaitingStepProps) {
       role="status"
       aria-live="polite"
     >
-      <OrbitSpheres size={176} />
+      <Firmamento height={150} />
 
       <p className="mt-10 text-[11px] font-semibold uppercase tracking-[0.18em] text-brand">
         Calculando
